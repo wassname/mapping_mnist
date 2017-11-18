@@ -2,6 +2,8 @@ MNIST is the hello world of machine learning. When we learn our optimizer is mov
 
 To do this we map mnist as we vary two nuerons. We reduce mnist to a binary problem (is the number less than 5), and reduce the dimensionality with a single conv2d layer. There are no hidden layers, and the head is a dense layer with two neurons: nueron x and nueron y. For our z axis we use loss.
 
+The result is quite smooth and covex, but perhaps that's a result of how I set up the problem.
+
 Steps:
 - Pre-train a model
 - freeze all but the x and y neurons parameters.
