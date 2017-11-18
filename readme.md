@@ -1,13 +1,13 @@
-MNIST is the hello world of machine learning. When we learn out optimizer moves through peaks and valleys. But how bumpy are those valleys and how many are there?
+MNIST is the hello world of machine learning. When we learn our optimizer is moving through peaks and valleys which correspond to local minima and maxima. But how bumpy are those valleys and how many are there? To get some kind of intuition for the problem, this project tries to visualize the landscape.
 
-This project tries to map a slice of the MNIST classification problem. We reduce mnist to a binary problem: is the number > 5?
+To do this we map mnist as we vary two nuerons. We reduce mnist to a binary problem (is the number less than 5), and reduce the dimensionality with a single conv2d layer. There are no hidden layers, and the head is a dense layer with two neurons: nueron x and nueron y. For our z axis we use loss.
 
-- Then we pre-train a model
-- freeze all but two parameters. We call those x and y.
-- Height, or z, is our loss.
+Steps:
+- Pre-train a model
+- freeze all but the x and y neurons parameters.
 - Then we peform a grid search over x and y to find the loss at differen't points.
-- finally we countour the landscape
-- and show the path of our model as it learns
+    - Records loss, loss variance, gradient, gradient variance
+- Visualize the result
 
 Results:
 
@@ -15,12 +15,3 @@ Results:
 ![](docs/logloss.png)
 ![](docs/std.png)
 ![](docs/logstd.png)
-
-
-TODO
-
-- [x] run a finer grid
-- [ ] run a wider search
-- [ ] try on an untrained model
-- [ ] show path of a model as it learns
-- [ ] make gif
